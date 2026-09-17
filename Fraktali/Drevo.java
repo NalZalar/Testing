@@ -10,7 +10,7 @@ public class Drevo{
         Zelva srednja = new Zelva(z.X , z.Y , z.fi);
         drevo(n - 1 , leva , korak * (1 / 3));
         drevo(n - 1 , desna , korak * (1 / 3));
-        drevo(n - 1 , srednja , korak * (1 - (1 / 3));
+        drevo(n - 1 , srednja , korak * (1 - (1 / 3)));
     }
     public static void main(String[] args){
         Zelva z = new Zelva(0.5 , 0 , 90);
