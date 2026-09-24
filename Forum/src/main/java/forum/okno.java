@@ -19,6 +19,8 @@ public class okno extends javax.swing.JFrame {
     public okno() {
         initComponents();
         setLocationRelativeTo(null);
+        pnlRegistracija.setVisible(false);
+        pnlPrijava.setVisible(true);
     }
 
     /**
@@ -39,6 +41,13 @@ public class okno extends javax.swing.JFrame {
         txtMail = new javax.swing.JTextField();
         txtGeslo = new javax.swing.JTextField();
         btnPotrdi = new javax.swing.JButton();
+        pnlPrijava = new javax.swing.JPanel();
+        lblUporabnik1 = new javax.swing.JLabel();
+        lblGeslo1 = new javax.swing.JLabel();
+        txtUporabnik1 = new javax.swing.JTextField();
+        txtGeslo1 = new javax.swing.JTextField();
+        btnPrijava = new javax.swing.JButton();
+        btnRegistracija = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(600, 300));
@@ -110,14 +119,80 @@ public class okno extends javax.swing.JFrame {
                 .addContainerGap(35, Short.MAX_VALUE))
         );
 
+        pnlPrijava.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Prijava", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 20))); // NOI18N
+        pnlPrijava.setPreferredSize(new java.awt.Dimension(350, 250));
+
+        lblUporabnik1.setText("Uporabnik");
+        lblUporabnik1.setPreferredSize(new java.awt.Dimension(60, 25));
+
+        lblGeslo1.setText("Geslo");
+        lblGeslo1.setPreferredSize(new java.awt.Dimension(60, 25));
+
+        txtUporabnik1.setPreferredSize(new java.awt.Dimension(200, 30));
+
+        txtGeslo1.setPreferredSize(new java.awt.Dimension(200, 30));
+
+        btnPrijava.setText("Prijava");
+        btnPrijava.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnPrijava.addActionListener(this::btnPrijavaActionPerformed);
+
+        btnRegistracija.setText("Registracija");
+        btnRegistracija.setPreferredSize(new java.awt.Dimension(100, 25));
+        btnRegistracija.addActionListener(this::btnRegistracijaActionPerformed);
+
+        javax.swing.GroupLayout pnlPrijavaLayout = new javax.swing.GroupLayout(pnlPrijava);
+        pnlPrijava.setLayout(pnlPrijavaLayout);
+        pnlPrijavaLayout.setHorizontalGroup(
+            pnlPrijavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPrijavaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlPrijavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnlPrijavaLayout.createSequentialGroup()
+                        .addComponent(lblUporabnik1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtUporabnik1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlPrijavaLayout.createSequentialGroup()
+                        .addComponent(lblGeslo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(txtGeslo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlPrijavaLayout.createSequentialGroup()
+                        .addComponent(btnPrijava, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRegistracija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+        pnlPrijavaLayout.setVerticalGroup(
+            pnlPrijavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPrijavaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlPrijavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUporabnik1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtUporabnik1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(37, 37, 37)
+                .addGroup(pnlPrijavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblGeslo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtGeslo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGroup(pnlPrijavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnPrijava, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegistracija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(lblPozdrav)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(lblPozdrav)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(19, Short.MAX_VALUE)
+                        .addComponent(pnlPrijava, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(pnlRegistracija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14))
         );
@@ -126,9 +201,14 @@ public class okno extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPozdrav)
-                    .addComponent(pnlRegistracija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(32, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblPozdrav)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                        .addComponent(pnlPrijava, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pnlRegistracija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         pack();
@@ -140,20 +220,54 @@ public class okno extends javax.swing.JFrame {
         String mail = txtMail.getText();
         String geslo = txtGeslo.getText();
         try {
-            PrintWriter pw = new PrintWriter(new FileWriter("C:\\Rac4\\uporabnik.txt") , true);
+            PrintWriter pw = new PrintWriter(new FileWriter("C:\\Rac4\\uporabnik.txt" ,  true));
             pw.println(uporabnik);
             pw.println(mail);
             pw.println(geslo);
             pw.close();
             lblPozdrav.setText("Pozdravljen " + uporabnik + "!");
-            txtUporabnik.setText("");
-            txtMail.setText("");
-            txtGeslo.setText("");
+            pnlRegistracija.setVisible(false);
         }
         catch (IOException e){
             JOptionPane.showMessageDialog(this , e.getMessage());
         }
     }//GEN-LAST:event_btnPotrdiActionPerformed
+
+    private void btnRegistracijaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistracijaActionPerformed
+        // TODO add your handling code here:
+        pnlPrijava.setVisible(false);
+        pnlRegistracija.setVisible(true);
+    }//GEN-LAST:event_btnRegistracijaActionPerformed
+
+    private void btnPrijavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrijavaActionPerformed
+        // TODO add your handling code here:
+        try{
+            String uporabnik = txtUporabnik1.getText();
+            String geslo = txtGeslo1.getText();
+            BufferedReader br = new BufferedReader(new FileReader("C:\\Rac4\\uporabnik.txt"));
+            String upDat = br.readLine();
+            while(upDat != null){
+                if(uporabnik.equals(upDat)){
+                    br.readLine();
+                    String gDat = br.readLine();
+                    if(geslo.equals(gDat)){
+                        lblPozdrav.setText("Pozdravljen " + uporabnik + "!");
+                        break;
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(this , "Napačno geslo");
+                    }
+                    break;
+                }
+                br.readLine();
+                br.readLine();
+                upDat = br.readLine();
+            }
+        }
+        catch(IOException e){
+            
+        }
+    }//GEN-LAST:event_btnPrijavaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -182,13 +296,20 @@ public class okno extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnPotrdi;
+    private javax.swing.JButton btnPrijava;
+    private javax.swing.JButton btnRegistracija;
     private javax.swing.JLabel lblGeslo;
+    private javax.swing.JLabel lblGeslo1;
     private javax.swing.JLabel lblMail;
     private javax.swing.JLabel lblPozdrav;
     private javax.swing.JLabel lblUporabnik;
+    private javax.swing.JLabel lblUporabnik1;
+    private javax.swing.JPanel pnlPrijava;
     private javax.swing.JPanel pnlRegistracija;
     private javax.swing.JTextField txtGeslo;
+    private javax.swing.JTextField txtGeslo1;
     private javax.swing.JTextField txtMail;
     private javax.swing.JTextField txtUporabnik;
+    private javax.swing.JTextField txtUporabnik1;
     // End of variables declaration//GEN-END:variables
 }
