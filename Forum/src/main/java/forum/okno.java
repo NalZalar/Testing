@@ -33,18 +33,18 @@ public class okno extends javax.swing.JFrame {
     private void initComponents() {
 
         lblPozdrav = new javax.swing.JLabel();
-        pnlRegistracija = new javax.swing.JPanel();
+        pnlRegistracija = new javax.swing.JLayeredPane();
         lblUporabnik = new javax.swing.JLabel();
-        lblMail = new javax.swing.JLabel();
-        lblGeslo = new javax.swing.JLabel();
         txtUporabnik = new javax.swing.JTextField();
+        lblMail = new javax.swing.JLabel();
         txtMail = new javax.swing.JTextField();
+        lblGeslo = new javax.swing.JLabel();
         txtGeslo = new javax.swing.JTextField();
         btnPotrdi = new javax.swing.JButton();
-        pnlPrijava = new javax.swing.JPanel();
+        pnlPrijava = new javax.swing.JLayeredPane();
         lblUporabnik1 = new javax.swing.JLabel();
-        lblGeslo1 = new javax.swing.JLabel();
         txtUporabnik1 = new javax.swing.JTextField();
+        lblGeslo1 = new javax.swing.JLabel();
         txtGeslo1 = new javax.swing.JTextField();
         btnPrijava = new javax.swing.JButton();
         btnRegistracija = new javax.swing.JButton();
@@ -63,21 +63,29 @@ public class okno extends javax.swing.JFrame {
         lblUporabnik.setMinimumSize(new java.awt.Dimension(60, 25));
         lblUporabnik.setPreferredSize(new java.awt.Dimension(60, 25));
 
+        txtUporabnik.setPreferredSize(new java.awt.Dimension(200, 30));
+
         lblMail.setText("E-mail");
         lblMail.setPreferredSize(new java.awt.Dimension(60, 25));
 
+        txtMail.setPreferredSize(new java.awt.Dimension(200, 30));
+
         lblGeslo.setText("Geslo");
         lblGeslo.setPreferredSize(new java.awt.Dimension(60, 25));
-
-        txtUporabnik.setPreferredSize(new java.awt.Dimension(200, 30));
-
-        txtMail.setPreferredSize(new java.awt.Dimension(200, 30));
 
         txtGeslo.setPreferredSize(new java.awt.Dimension(200, 30));
 
         btnPotrdi.setText("Potrdi");
         btnPotrdi.setPreferredSize(new java.awt.Dimension(200, 25));
         btnPotrdi.addActionListener(this::btnPotrdiActionPerformed);
+
+        pnlRegistracija.setLayer(lblUporabnik, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        pnlRegistracija.setLayer(txtUporabnik, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        pnlRegistracija.setLayer(lblMail, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        pnlRegistracija.setLayer(txtMail, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        pnlRegistracija.setLayer(lblGeslo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        pnlRegistracija.setLayer(txtGeslo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        pnlRegistracija.setLayer(btnPotrdi, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout pnlRegistracijaLayout = new javax.swing.GroupLayout(pnlRegistracija);
         pnlRegistracija.setLayout(pnlRegistracijaLayout);
@@ -87,36 +95,39 @@ public class okno extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(pnlRegistracijaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnPotrdi, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlRegistracijaLayout.createSequentialGroup()
-                        .addGroup(pnlRegistracijaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlRegistracijaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnlRegistracijaLayout.createSequentialGroup()
                             .addComponent(lblUporabnik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtUporabnik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlRegistracijaLayout.createSequentialGroup()
                             .addComponent(lblMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblGeslo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(pnlRegistracijaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtUporabnik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(pnlRegistracijaLayout.createSequentialGroup()
+                            .addComponent(lblGeslo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
                             .addComponent(txtGeslo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
         pnlRegistracijaLayout.setVerticalGroup(
             pnlRegistracijaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlRegistracijaLayout.createSequentialGroup()
-                .addGap(12, 12, 12)
+                .addGap(15, 15, 15)
                 .addGroup(pnlRegistracijaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUporabnik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtUporabnik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlRegistracijaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtMail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlRegistracijaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtGeslo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblGeslo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblGeslo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtGeslo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnPotrdi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pnlPrijava.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Prijava", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 20))); // NOI18N
@@ -125,10 +136,10 @@ public class okno extends javax.swing.JFrame {
         lblUporabnik1.setText("Uporabnik");
         lblUporabnik1.setPreferredSize(new java.awt.Dimension(60, 25));
 
+        txtUporabnik1.setPreferredSize(new java.awt.Dimension(200, 30));
+
         lblGeslo1.setText("Geslo");
         lblGeslo1.setPreferredSize(new java.awt.Dimension(60, 25));
-
-        txtUporabnik1.setPreferredSize(new java.awt.Dimension(200, 30));
 
         txtGeslo1.setPreferredSize(new java.awt.Dimension(200, 30));
 
@@ -139,6 +150,13 @@ public class okno extends javax.swing.JFrame {
         btnRegistracija.setText("Registracija");
         btnRegistracija.setPreferredSize(new java.awt.Dimension(100, 25));
         btnRegistracija.addActionListener(this::btnRegistracijaActionPerformed);
+
+        pnlPrijava.setLayer(lblUporabnik1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        pnlPrijava.setLayer(txtUporabnik1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        pnlPrijava.setLayer(lblGeslo1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        pnlPrijava.setLayer(txtGeslo1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        pnlPrijava.setLayer(btnPrijava, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        pnlPrijava.setLayer(btnRegistracija, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout pnlPrijavaLayout = new javax.swing.GroupLayout(pnlPrijava);
         pnlPrijava.setLayout(pnlPrijavaLayout);
@@ -168,15 +186,15 @@ public class okno extends javax.swing.JFrame {
                 .addGroup(pnlPrijavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUporabnik1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtUporabnik1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
+                .addGap(18, 18, 18)
                 .addGroup(pnlPrijavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblGeslo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtGeslo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGap(49, 49, 49)
                 .addGroup(pnlPrijavaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPrijava, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnRegistracija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(38, 38, 38))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,31 +202,23 @@ public class okno extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(lblPozdrav)
+                .addGap(74, 74, 74)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(lblPozdrav)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(19, Short.MAX_VALUE)
-                        .addComponent(pnlPrijava, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addComponent(pnlRegistracija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                    .addComponent(pnlPrijava, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlRegistracija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblPozdrav)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addComponent(pnlPrijava, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(pnlRegistracija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(pnlRegistracija, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pnlPrijava, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPozdrav))
+                .addContainerGap(138, Short.MAX_VALUE))
         );
 
         pack();
@@ -243,26 +253,30 @@ public class okno extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             String uporabnik = txtUporabnik1.getText();
-            String geslo = txtGeslo1.getText();
             BufferedReader br = new BufferedReader(new FileReader("C:\\Rac4\\uporabnik.txt"));
             String upDat = br.readLine();
             while(upDat != null){
                 if(uporabnik.equals(upDat)){
                     br.readLine();
                     String gDat = br.readLine();
-                    if(geslo.equals(gDat)){
+                    if(gDat.equals(txtGeslo1.getText())){
                         lblPozdrav.setText("Pozdravljen " + uporabnik + "!");
-                        break;
+                        return;
                     }
                     else{
                         JOptionPane.showMessageDialog(this , "Napačno geslo");
+                        txtGeslo1.setText("");
+                        txtGeslo1.requestFocusInWindow();
+                        return;
                     }
-                    break;
                 }
                 br.readLine();
                 br.readLine();
                 upDat = br.readLine();
             }
+            JOptionPane.showMessageDialog(this,"Ni takega uporabnika, registriraj se!");
+            txtUporabnik1.setText("");
+            txtGeslo1.setText("");
         }
         catch(IOException e){
             
@@ -304,8 +318,8 @@ public class okno extends javax.swing.JFrame {
     private javax.swing.JLabel lblPozdrav;
     private javax.swing.JLabel lblUporabnik;
     private javax.swing.JLabel lblUporabnik1;
-    private javax.swing.JPanel pnlPrijava;
-    private javax.swing.JPanel pnlRegistracija;
+    private javax.swing.JLayeredPane pnlPrijava;
+    private javax.swing.JLayeredPane pnlRegistracija;
     private javax.swing.JTextField txtGeslo;
     private javax.swing.JTextField txtGeslo1;
     private javax.swing.JTextField txtMail;
